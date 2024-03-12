@@ -5,7 +5,6 @@
     "validation_code_required": "Ein Validierungscode ist erforderlich",
     "validation_code_title": "Sie haben die Zwei-Faktor-Authentifizierung für Ihr Konto aktiviert. Bitte geben Sie einen Validierungscode ein, der von der konfigurierten Telefon-App generiert wurde.",
     "validation_code": "Validierungscode",
-    "remember_me": "Angemeldet bleiben",
     "submit": "Anmelden",
     "login_as_guest": "Als Gast anmelden",
     "login_failed_title": "Login fehlgeschlagen",

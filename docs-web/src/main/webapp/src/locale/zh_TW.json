@@ -5,7 +5,6 @@
     "validation_code_required": "請輸入驗證碼",
     "validation_code_title": "您的帳號已經激活了雙身份驗證. 請輸入您配置手機app的提供的驗證碼.",
     "validation_code": "驗證碼",
-    "remember_me": "記住我",
     "submit": "登錄",
     "login_as_guest": "以遊客身份登錄",
     "login_failed_title": "登錄失敗",
