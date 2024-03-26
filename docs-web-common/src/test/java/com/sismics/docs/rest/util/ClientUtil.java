@@ -120,7 +120,7 @@ public class ClientUtil {
                 .post(Entity.form(new Form()
                         .param("username", username)
                         .param("password", password)
-                        .param("remember", remember.toString())));
+                        // .param("remember", remember.toString())));
         Assert.assertEquals(200, response.getStatus());
 
         return getAuthenticationCookie(response);
