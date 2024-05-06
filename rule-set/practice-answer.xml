@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ruleset name="myruleset"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+        My custom rules
+    </description>
+
+
+    <!-- measure the LOC -->
+    <rule ref="category/java/design.xml/NcssCount"/>
+
+    <!-- measure the CC && WMC-->
+    <rule ref="category/java/design.xml/CyclomaticComplexity"/>
+
+    <!-- measure the CBO -->
+    <rule ref="category/java/design.xml/CouplingBetweenObjects"/>
+
+    <!-- measure the LCOM && WMC-->
+    <rule ref="category/java/design.xml/GodClass" />
+
+
+</ruleset>
