@@ -15,18 +15,17 @@ pipeline {
         // Uploading Docker images into Docker Hub
         stage('Upload image') {
             steps {
-                sh 'docker tag marsy298/teedyjenkins:v1.0'
-                sh 'docker image push marsy298/teedyjenkins:v1.0'
+                sh 'docker image push marsy298/teedyjenkins'
             }
         }
         //Running Docker container
         stage('Run containers') {
             steps {
                 script {
-                    sh 'docker pull marsy298/teedyjenkins:v1.0'
-                    sh 'docker run -d -p 8084:8080 --name teedyjenkins01 marsy298/teedyjenkins:v1.0'
-                    sh 'docker run -d -p 8082:8080 --name teedyjenkins02 marsy298/teedyjenkins:v1.0'
-                    sh 'docker run -d -p 8083:8080 --name teedyjenkins03 marsy298/teedyjenkins:v1.0'
+                    sh 'docker pull marsy298/teedyjenkins:latest'
+                    sh 'docker run -d -p 8084:8080 --name teedyjenkins01 marsy298/teedyjenkins'
+                    sh 'docker run -d -p 8082:8080 --name teedyjenkins02 marsy298/teedyjenkins'
+                    sh 'docker run -d -p 8083:8080 --name teedyjenkins03 marsy298/teedyjenkins'
                 }
             }
         }
