@@ -6,15 +6,28 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('test') {
+        // Building Docker images
+        stage('Building image') {
             steps {
-                sh 'mvn test --fail-never'
-                sh 'mvn jacoco:report'
+                sh 'docker build -t marsy298/teedyjenkins .'
             }
         }
-        stage('doc') {
+        // Uploading Docker images into Docker Hub
+        stage('Upload image') {
             steps {
-                sh 'mvn javadoc:jar'
+                // sh 'docker tag marsy298/teedyjenkins:v1.0'
+                sh 'docker image push marsy298/teedyjenkins:v1.0'
+            }
+        }
+        //Running Docker container
+        stage('Run containers') {
+            steps {
+                script {
+                    sh 'docker pull marsy298/teedyjenkins:v1.0'
+                    sh 'docker run -d -p 8084:8080 --name teedyjenkins01 marsy298/teedyjenkins:v1.0'
+                    sh 'docker run -d -p 8082:8080 --name teedyjenkins02 marsy298/teedyjenkins:v1.0'
+                    sh 'docker run -d -p 8083:8080 --name teedyjenkins03 marsy298/teedyjenkins:v1.0'
+                }
             }
         }
     }
