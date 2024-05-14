@@ -15,7 +15,7 @@ pipeline {
         // Uploading Docker images into Docker Hub
         stage('Upload image') {
             steps {
-                // sh 'docker tag marsy298/teedyjenkins:v1.0'
+                sh 'docker tag marsy298/teedyjenkins:v1.0'
                 sh 'docker image push marsy298/teedyjenkins:v1.0'
             }
         }
